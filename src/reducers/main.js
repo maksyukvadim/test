@@ -1,11 +1,10 @@
 import { handleActions } from 'redux-actions'
 
 const initialState = {
-        cards: [], 
-        counter: 0      
+        listEercises: [],      
 };
 
 export default handleActions({
-    INCREMENT: (state, action) => ({...state, counter: action.payload})
+    SET_EXERCISES: (state, action) => ({...state, listEercises: action.payload})
 
 }, initialState);

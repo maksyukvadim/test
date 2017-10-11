@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { increment } from '../actions/PageActions';
-console.log(typeof increment);
+import { getExercises } from '../actions/PageActions';
+
 class MainContainer extends Component {
     componentWillMount() {
-        //this.props.asd();
-console.log(typeof this.props.asd);
-
+      const data = {
+        api: "exercises/get-exercises",
+        clientKey: "8e28b8db-6395-4417-9df9-10dd0efb5ef9",
+        paging:{
+            limit:12,
+            offset:0
+        }
+    }
+        this.props.asd(data);
     }
 
   render() {
@@ -25,6 +31,6 @@ export default connect(
     (state) => ({card:state.main.cards,
         counter: state.main.counter}),
     (dispatch) => ({
-        asd: (a) => dis patch(increment(a))
+        asd: (body) => dispatch(getExercises(body))
     })
 )(MainContainer) ;
