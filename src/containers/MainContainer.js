@@ -22,9 +22,9 @@ console.log(typeof this.props.asd);
 }
 
 export default connect(
-    (state) => ({card:state.cards,
-        counter: state.counter}),
+    (state) => ({card:state.main.cards,
+        counter: state.main.counter}),
     (dispatch) => ({
-        asd: (a) => dispatch(increment(a))
+        asd: (a) => dis patch(increment(a))
     })
 )(MainContainer) ;

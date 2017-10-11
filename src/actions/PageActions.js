@@ -1,3 +1,3 @@
-import { createActions, handleActions, combineActions } from 'redux-actions'
+import { createActions } from 'redux-actions'
 
-export const increment = createActions({"INCREMENT": (val) => val});
+export const increment = createActions("INCREMENT": (val) => val);
